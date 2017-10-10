@@ -14,8 +14,8 @@
 local p = io.popen('ls /dev/usb')  --Open directory look for files, save data in p. By giving '-type f' as parameter, it returns all files.
 for fileName in p:lines() do                         --Loop through all files
     print(fileName)
-    file = io.open("/dev/usb/" .. fileName, "rb")
-    local buf = f:read(8)
+    local file = io.open("/dev/usb/" .. fileName, "rb")
+    local buf = file:read(8)
     print(buf)
-    f:close()
+    file:close()
 end
