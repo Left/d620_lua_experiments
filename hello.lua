@@ -16,7 +16,7 @@ for fileName in p:lines() do                         --Loop through all files
     print(fileName)
     local file = io.open("/dev/usb/" .. fileName, "rb")
     local buf = file:read(8)
-    while (buf:length == 0) do
+    while (strlen(buf) == 0) do
         buf = file:read(8)
     end
     print(buf)
